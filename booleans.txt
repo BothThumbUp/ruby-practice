@@ -1,0 +1,41 @@
+booleans
+
+&& = and
+|| = or
+== = equal
+>= great than equal
+<= less than equal
+! = not
+!= = not equal
+true
+false
+
+true && true = true
+true && false = false
+false && true = false
+false && false = false
+
+false || false = false
+false || true = true
+true || false = true
+true || true = true
+
+not (false || false) = true
+not (false || true) = false
+not (true || true) = false
+not (true || false) = false
+
+!(true && true) = false
+!(true && false) = true
+!(false && true) = true
+!(false && false) = true
+
+1 != 0 is true
+1 != 1 is false
+0 != 1 is true
+0 != 0 is false
+
+1 == 0 is false
+1 == 1 is true
+0 == 1 is false
+0 == 0 is true

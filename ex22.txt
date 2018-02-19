@@ -1,0 +1,57 @@
+puts = prints something to the screen and creates a new line underneath
+print = prints something to the screen but stays on the same line
+= = assigns value
+# = this is an octothorp. putting it at the beginning of a line comments it out, which means ruby doesn't recognize the line as code.
++ = addition
+- = subtraction
+/ = division
+* = multiplication
+% = modulus. this calculates the remainder of a division equation.
+< = less than (true or false)
+> = greater than (true or false)
+<= = tests one thing is less than or equal to (true or false)
+>= = tests one thing is greater than or equal to (true or false)
+== = tests whether two things have the same value (true or false)
+#{ } = this is how you insert ruby computations into text strings
+irb = interactive ruby shell
+_ = underscore
+floating point number = a number with a decimal point
+ruby = command to run a ruby file (.rb)
+" " = anything in between the quotes creates a strings
+' ' = anything in between the quotes creates a strings
+%{ } = string interpolation?
+\ = encodes difficult to type characters into a string. ex. it's used in front of "" if those quotes are supposed to print inside a string
+\n = puts a new line character into a string
+\t = horizontal tab
+\a = ASCII bell (BEL)
+\b = ASCII backspace (BS)
+\f = ASCII formfeed (FF)
+\n = ASCII Carriage Return (CR)
+\r = ASCII Horizontal Tab (TAB)
+\uxxxx = character with 16-bit hex value xxxx (Unicode only)
+\v = ASCII vertical tab (VT)
+\ooo = character with octal value ooo
+\xhh = character with hex value hh
+\* = prints an asterix
+\\ = prints one \
+\' = prints one single quote
+\" = prints one double quote
+%q{ } = prints everything within the brackets as a string, including spacing and formatting
+.chomp = function that cuts off blank space at the end
+.to_i = function that converts input to integer
+.to_f = turns input into a floating integer
+ARGV = passes variables to a script. ruby ex2.rb ex2.txt passes the argument ex2.txt to the script ex2.rb and is similar to saying function(argument) within a script, but with files on the terminal level. must type ARGV.first if there's only one argument being passed.
+.gets = requires input while a script is being run
+gets.chomp() = read ARGV first
+$STDIN.gets.chomp() = standard input. read user's input during a script
+open = open command (file#OPEN)
+close = close command (file#CLOSE)
+read = read command
+readline = reads just one line of a text file
+truncate = empties the file
+write("  ") = writes what's in between the " " to the file
+open(filename, 'w') = opens filename in write mode
+seek(0) = moves the read/write location to the beginning of the file
+cat = terminal command that reads the content of a txt file
+def = how you define a function in ruby
+end = how you end defining a function in ruby

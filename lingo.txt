@@ -1,0 +1,23 @@
+* means I'm still not sure what it means
+
+class = tells ruby to make a new thing. this is how you write a class: MyStuff, NewThing, NoUnderscores
+object = the most basic type of thing, and any instance of some thing.
+instance = when you tell ruby to create a new class. ex. anything = MyStuff.new()
+def = how you define a function within a class. ex. def function; end;
+@ = indicates an instance variable within a function. ex. @variable
+inheritance = the concept that one class can inherit all traits from another class. ex. ChildClass < ParentClass
+*composition = the concept that a class can be composed of other classes as parts.
+
+class X < y means 'class X is a y'
+class X: def initialize(J) means 'class X has a initialize that takes a J parameter.
+class X: def M(J) means 'class X has a function named M that takes a J parameter'
+foo = X.new() means 'set foo to an instance of class X'
+foo.M(J) means 'from foo, get the M function and call it with parameter J'
+foo.K = Q means 'from foo, get the K function and set it to Q'
+
+
+ NO NO NO NO and give it
+ NO NO NO NO and pass it
+ NO NO NO NO For _____
+ yes yes yes and call it with 
+ yes yes yes FROM ______
