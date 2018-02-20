@@ -1,3 +1,5 @@
+OriginalCsv = ARGV.first
+
 class CsvTransformer
 
   SPECIAL_CHAR = ["Š", "Ž", "š", "ž", "Ÿ", "À", "Á", "Â", "Ã", "Ä", "Å", "Ç", "È",
@@ -31,7 +33,7 @@ class CsvTransformer
 
     # Creates new .csv file.
     def format_csv
-      File.open("newsheet.csv", "w") do |f|
+      File.open("new.csv", "w") do |f|
         f.write(new_content)
       end
     end
@@ -47,7 +49,7 @@ class CsvTransformer
 
     # This is where all the formatting shit happens.
     def new_content
-      canada_file = open("Sheet1.csv")
+      canada_file = open(OriginalCsv)
       file_contents = canada_file.read.split("")
 
       file_contents.map! do |char|
