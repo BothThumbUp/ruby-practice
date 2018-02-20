@@ -52,6 +52,7 @@ class CsvTransformer
       canada_file = open(OriginalCsv)
       file_contents = canada_file.read.split("")
 
+      # Replaces special characters with normal characters
       file_contents.map! do |char|
         if SPECIAL_CHAR.include?(char)
           char = transforms[char]
@@ -61,11 +62,13 @@ class CsvTransformer
 
       no_special_char = file_contents.join.split(",")
 
+      # Removes empty spaces
       no_special_char.each do |cell|
         cell.strip! unless cell.include?("\r")
         cell.squeeze!(" ")
       end
 
+      # Changes provinces to their abbreviations.
       no_special_char.map! do |cell|
         if PROVINCES.include?(cell)
           cell = PROVINCES[cell]
