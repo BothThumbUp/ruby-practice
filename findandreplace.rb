@@ -29,49 +29,40 @@ class CsvTransformer
 
   class << self
 
-    def find_and_replace_special_characters
+    # Creates new .csv file.
+    def format_csv
       File.open("newsheet.csv", "w") do |f|
         f.write(new_content)
       end
     end
 
-
     private
 
+    # Method that replaces provinces with abbreviated provinces.
     def transforms
       @transforms ||= {}.tap do |t|
         SPECIAL_CHAR.each_with_index {|s,n| t[s] = NORMAL_CHAR[n]}
       end
     end
 
-
+    # This is where all the formatting shit happens.
     def new_content
-      # This sets the local variable canada_file to the method open on the csv file.
       canada_file = open("Sheet1.csv")
-      # This sets the local var file_contents to an array of the csv contents, which has been split up into strings separated by commas.
-      file_contents = canada_file.read.split(",")
-      # This prints the local var file_contents, which should appear like each cell would if this csv was opened in a spreadsheet.
-      p file_contents
-      p "-" * 40
-      # Now that each cell's contents are in their own string, this block method strips the whitespace at the beginning and end of each string.
-      no_spaces = file_contents.each do |string|
-        string.strip
-      end
-      p no_spaces
-      no_spaces.join.split("")
+      file_contents = canada_file.read.split("")
 
-      no_spaces.map! do |char|
+      file_contents.map! do |char|
         if SPECIAL_CHAR.include?(char)
           char = transforms[char]
         end
         char
       end
-      p no_spaces
-      p "-" * 40
 
-      no_special_char = no_spaces.join.split(",")
-      p no_special_char
-      p "-" * 40
+      no_special_char = file_contents.join.split(",")
+
+      no_special_char.each do |cell|
+        cell.strip! unless cell.include?("\r")
+        cell.squeeze!(" ")
+      end
 
       no_special_char.map! do |cell|
         if PROVINCES.include?(cell)
@@ -80,9 +71,9 @@ class CsvTransformer
         cell
       end
       no_special_char.join(",")
-
     end
   end
 end
 
-CsvTransformer.find_and_replace_special_characters
+# This is the story of a girl. Who cried a river and drowned the whole world.
+CsvTransformer.format_csv
